@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const operations_manager_1 = __importDefault(require("../modules/operations-manager"));
-const user_stream_1 = __importDefault(require("../modules/user-stream"));
+const operations_manager = __importDefault(require("../modules/operations-manager"));
+const user_stream = __importDefault(require("../modules/user-stream"));
 
 
 class App {
     constructor() {
         this.isClosed = false;
-        this.userStream = new user_stream_1.default();
-        this.operationManager = new operations_manager_1.default();
+        this.userStream = new user_stream.default();
+        this.operationManager = new operations_manager.default();
     }
     start() {
         this.userStream.showInfo('\n[\x1b[35mattention\x1b[0m]', 'At the start of the program and after each end', 'of input/operation current working directory printed', 'in following way "path_to_working_directory>"');
@@ -19,7 +19,7 @@ class App {
         this.processData();
         this.handleAppExit();
     }
-    
+
     processData() {
         process.stdout.write(`${this.operationManager.currentDirectory}\x1b[36m>\x1b[0m`);
         process.stdin.once('data', (data) => {
