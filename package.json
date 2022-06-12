@@ -1,0 +1,12 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "RS school",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+    
+  },
+  "author": "Maxim",
+  "license": "ISC"
+}
